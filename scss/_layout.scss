@@ -1,0 +1,808 @@
+// ============================================
+// LAYOUT - Header, footer, grid
+// ============================================
+
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+
+// Header - Nav flotante (responsive sin overflow)
+.header {
+  position: fixed;
+  top: $space-4;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94%;
+  max-width: 1200px;
+  z-index: $z-sticky;
+  background: rgba($bg-dark, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid $border-color;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  transition: background $transition-base, border-color $transition-base, box-shadow $transition-base;
+
+  @include respond-to("sm") {
+    width: 92%;
+  }
+
+  @include respond-to("md") {
+    width: 92%;
+  }
+
+  &.scrolled {
+    background: rgba(13, 17, 23, 0.62);
+    box-shadow: $shadow-lg;
+  }
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: $space-2;
+    min-height: 56px;
+    padding-top: $space-2;
+    padding-bottom: $space-2;
+    padding-left: $space-3;
+    padding-right: $space-3;
+    min-width: 0;
+
+    @include respond-to("sm") {
+      gap: $space-3;
+      min-height: 64px;
+      padding-top: $space-3;
+      padding-bottom: $space-3;
+      padding-left: $space-4;
+      padding-right: $space-4;
+    }
+
+    @include respond-to("md") {
+      justify-content: center;
+      gap: $space-4;
+      min-height: 80px;
+      padding-top: $space-3;
+      padding-bottom: $space-3;
+
+      @include respond-to("lg") {
+        gap: $space-6;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    line-height: 0;
+    flex-shrink: 0;
+    min-width: 0;
+
+    img.header__logo-img {
+      display: block;
+      height: 28px;
+      width: auto;
+      max-width: 100px;
+      object-fit: contain;
+
+      @include respond-to("sm") {
+        height: 34px;
+        max-width: 130px;
+      }
+
+      @include respond-to("md") {
+        height: 40px;
+        max-width: 160px;
+      }
+
+      @include respond-to("lg") {
+        height: 42px;
+        max-width: 180px;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include respond-to("md") {
+      display: flex;
+      align-items: center;
+      gap: $space-3;
+      flex-shrink: 1;
+      min-width: 0;
+      justify-content: center;
+
+      @include respond-to("lg") {
+        gap: $space-6;
+      }
+    }
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-muted;
+    padding: $space-2 $space-3;
+    border-radius: $radius-full;
+    transition: background $transition-base, color $transition-base;
+    white-space: nowrap;
+
+    @include respond-to("lg") {
+      font-size: $font-size-base;
+      padding: $space-2 $space-4;
+    }
+
+    &:hover {
+      color: $color-text;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    &.active {
+      color: $color-text;
+      background: $color-accent;
+    }
+
+    &--cv {
+      margin-left: $space-2;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    flex-shrink: 0;
+    min-width: 0;
+    white-space: nowrap;
+
+    @include respond-to("md") {
+      gap: $space-3;
+    }
+
+    @include respond-to("lg") {
+      gap: $space-4;
+    }
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid $border-color;
+    border-radius: $radius-full;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: background $transition-base, border-color $transition-base, color $transition-base;
+    @include focus-visible;
+  }
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  [data-theme="light"] .theme-toggle {
+    border-color: var(--color-border);
+  }
+  [data-theme="light"] .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+  .theme-toggle__icon {
+    position: absolute;
+    font-size: 1.1rem;
+    transition: opacity $transition-base, transform $transition-base;
+  }
+  .theme-toggle__icon--moon {
+    opacity: 1;
+  }
+  .theme-toggle__icon--sun {
+    opacity: 0;
+  }
+  [data-theme="light"] .theme-toggle__icon--moon {
+    opacity: 0;
+  }
+  [data-theme="light"] .theme-toggle__icon--sun {
+    opacity: 1;
+  }
+
+  // Mismo estilo que .contact__submit; en móvil más compacto para no romper el responsive
+  &__cv {
+    @include button-primary;
+    padding: $space-2 $space-3;
+    font-size: $font-size-xs;
+    white-space: nowrap;
+    color: $color-tertiary;
+
+    @include respond-to("sm") {
+      padding: $space-2 $space-4;
+      font-size: $font-size-sm;
+    }
+
+    @include respond-to("md") {
+      padding: $space-3 $space-5;
+      font-size: $font-size-base;
+    }
+
+    @include respond-to("lg") {
+      padding: $space-3 $space-6;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color-tertiary;
+      background: color.adjust($color-primary, $lightness: 8%);
+      box-shadow: $shadow-glow-primary;
+    }
+
+    &--mobile {
+      margin-top: $space-2;
+      text-align: center;
+      width: 100%;
+      justify-content: center;
+      padding: $space-3 $space-6;
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// Menú móvil
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  padding: 4px;
+  flex-shrink: 0;
+  @include focus-visible;
+
+  @include respond-to("md") {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $color-text;
+    border-radius: $radius-full;
+    transition: transform $transition-base, opacity $transition-base;
+  }
+
+  &.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+  &.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($bg-dark, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: $z-dropdown;
+  padding: $space-6 $space-4 $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transform: translateX(100%);
+  transition: transform $transition-base;
+  border-top: 1px solid $border-color;
+  overflow-y: auto;
+
+  @include respond-to("sm") {
+    top: 72px;
+  }
+
+  @include respond-to("md") {
+    display: none;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .header__link {
+    font-size: $font-size-lg;
+    padding: $space-4 $space-3;
+    border-radius: $radius-lg;
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+// Hero - Card morada flotante (estilo Thinkly)
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: $space-10;
+
+  @include respond-to("md") {
+    padding-bottom: $space-12;
+  }
+
+  @include respond-to("lg") {
+    padding-top: 88px;
+    padding-bottom: $space-16;
+  }
+
+  position: relative;
+  overflow: hidden;
+  background-color: $color-tertiary;
+}
+
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  opacity: 0.5;
+
+  &--1 {
+    width: min(80vw, 500px);
+    height: min(80vw, 500px);
+    top: -15%;
+    right: -10%;
+    background: rgba($color-accent, 0.35);
+  }
+
+  &--2 {
+    width: min(70vw, 400px);
+    height: min(70vw, 400px);
+    bottom: -20%;
+    left: -15%;
+    background: rgba($color-primary, 0.2);
+  }
+}
+
+.hero__triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  pointer-events: none;
+  opacity: 0.4;
+
+  &--left {
+    top: 30%;
+    left: 0;
+    border-width: 80px 40px 0 0;
+    border-color: rgba($color-accent, 0.5) transparent transparent transparent;
+  }
+
+  &--right {
+    bottom: 25%;
+    right: 0;
+    border-width: 0 0 80px 40px;
+    border-color: transparent transparent rgba($color-primary, 0.4) transparent;
+  }
+}
+
+.hero__card {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(243, 237, 255, 0.98);
+  border-radius: 28px;
+  box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero__card-inner {
+  border: 1px solid rgba(211, 111, 254, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: grid;
+  gap: $space-10;
+  padding: $space-10 $space-6;
+
+  @include respond-to("md") {
+    padding: $space-12 $space-8;
+    gap: $space-12;
+  }
+
+  @include respond-to("lg") {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: $space-16;
+    padding: $space-16 $space-12;
+  }
+
+  @include respond-to("xl") {
+    padding: $space-20 $space-16;
+    gap: $space-20;
+  }
+}
+
+.hero__content {
+  order: 1;
+}
+
+.hero__title {
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $space-4;
+  line-height: 1.25;
+  color: #1f2937;
+
+  @include respond-to("md") {
+    font-size: $font-size-3xl;
+  }
+
+  @include respond-to("lg") {
+    font-size: $font-size-4xl;
+  }
+
+  span {
+    color: $color-heading-accent;
+  }
+}
+
+.hero__subtitle {
+  font-weight: $font-weight-light;
+  font-size: $font-size-base;
+  color: #4b5563;
+  margin-bottom: $space-6;
+  line-height: $line-height-relaxed;
+  max-width: 520px;
+
+  @include respond-to("md") {
+    font-size: $font-size-lg;
+    margin-bottom: $space-8;
+  }
+}
+
+.hero__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  align-items: center;
+}
+
+.hero__select {
+  flex: 1 1 140px;
+  min-width: 0;
+  padding: $space-3 $space-4;
+  font-family: $font-sans;
+  font-size: $font-size-sm;
+  color: #374151;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: $radius-md;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent;
+  }
+}
+
+.hero__btn-cta {
+  @include button-base;
+  background: $color-accent;
+  color: $color-text;
+  border-color: $color-accent;
+  padding: $space-3 $space-6;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+
+  &:hover {
+    background: color.adjust($color-accent, $lightness: -8%);
+    box-shadow: $shadow-glow-accent;
+  }
+}
+
+.hero__image-wrap {
+  position: relative;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
+
+  @include respond-to("md") {
+    min-height: 360px;
+  }
+
+  @include respond-to("lg") {
+    min-height: 420px;
+  }
+}
+
+.hero__image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: cover;
+  border-radius: $radius-lg;
+
+  @include respond-to("lg") {
+    max-width: 380px;
+  }
+}
+
+// Orden visual: 1 Ideas (izq), 2 Diseño (der arriba), 3 Desarrollo (der abajo)
+.hero__icon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 16px rgba($color-tertiary, 0.25);
+  @include flex-center;
+  color: $color-accent;
+  animation: hero-float 4s ease-in-out infinite;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &--bulb {
+    top: 8%;
+    left: 2%;
+    animation-delay: 0s;
+    order: 1;
+  }
+
+  &--cloud {
+    top: 6%;
+    right: 4%;
+    animation-delay: 0.6s;
+    order: 2;
+  }
+
+  &--graph {
+    bottom: 18%;
+    right: 2%;
+    animation-delay: 1.2s;
+    order: 3;
+  }
+
+  &.hero__icon--animated {
+    animation: hero-float 2.5s ease-in-out infinite, hero-pulse 1.5s ease-in-out infinite;
+  }
+}
+
+.hero__label {
+  position: absolute;
+  padding: $space-2 $space-4;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: #374151;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: $radius-full;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  animation: hero-float 5s ease-in-out infinite;
+  white-space: nowrap;
+
+  &--ideas {
+    top: 14%;
+    left: 0;
+    animation-delay: 0.2s;
+    order: 1;
+  }
+
+  &--1 {
+    top: 32%;
+    right: 0;
+    animation-delay: 0.5s;
+    order: 2;
+  }
+
+  &--2 {
+    bottom: 28%;
+    right: 0;
+    animation-delay: 1s;
+    order: 3;
+  }
+
+  &.hero__label--animated {
+    animation: hero-float 3s ease-in-out infinite, hero-pulse 2s ease-in-out infinite;
+  }
+
+  @include respond-to("md") {
+    &--ideas { left: -4%; }
+    &--1 { right: -4%; }
+    &--2 { right: -2%; }
+  }
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes hero-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+// Footer - Estilo tipo CIDET Capacitate (columnas, Hable con nosotros, De tu interés, Sobre)
+.footer {
+  max-width: 90%;
+  margin: 0 auto;
+  border-radius: 16px 16px 0 0;
+  background: $bg-card;
+  border-top: 1px solid $border-color;
+  padding: $space-16 0 $space-8;
+
+  &__inner {
+    @include container;
+  }
+
+  &__main {
+    display: grid;
+    gap: $space-8;
+    margin-bottom: $space-12;
+    padding-bottom: $space-10;
+    border-bottom: 1px solid $border-color;
+
+    @include respond-to("md") {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: $space-12;
+    }
+
+    @include respond-to("lg") {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__brand {
+    max-width: 420px;
+  }
+
+  &__logo {
+    display: inline-block;
+    line-height: 0;
+    margin-bottom: $space-3;
+
+    img.footer__logo-img {
+      display: block;
+      height: 36px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+    }
+  }
+
+  &__tagline {
+    font-weight: $font-weight-light;
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    line-height: $line-height-relaxed;
+  }
+
+  &__contact {
+    @include respond-to("md") {
+      text-align: right;
+    }
+  }
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: $space-3;
+  }
+
+  &__email {
+    font-size: $font-size-base;
+    color: $color-primary;
+    font-weight: $font-weight-medium;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__links-row {
+    display: grid;
+    gap: $space-8;
+    margin-bottom: $space-10;
+
+    @include respond-to("sm") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to("lg") {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-12;
+    }
+  }
+
+  &__col {
+    &--social {
+      @include respond-to("lg") {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__list {
+    li {
+      margin-bottom: $space-2;
+    }
+  }
+
+  &__link {
+    font-weight: $font-weight-light;
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+
+    @include respond-to("sm") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: $space-4;
+    }
+  }
+
+  &__social-link {
+    font-weight: $font-weight-light;
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__bottom {
+    padding-top: $space-6;
+    border-top: 1px solid $border-color;
+    text-align: center;
+
+    @include respond-to("md") {
+      text-align: left;
+    }
+  }
+
+  &__copy {
+    font-weight: $font-weight-light;
+    font-size: $font-size-sm;
+    color: $color-text-subtle;
+  }
+}

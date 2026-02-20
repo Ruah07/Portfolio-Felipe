@@ -1,0 +1,132 @@
+// ============================================
+// TEMAS Día / Noche (Apple-style)
+// ============================================
+
+@use "variables" as *;
+
+// Tema oscuro (por defecto) — ya aplicado en base/layout/components
+// Solo definimos variables CSS para posibles overrides
+
+:root {
+  --color-bg: #{$color-tertiary};
+  --color-bg-card: #{$bg-card};
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-border: #{$border-color};
+  --color-primary: #{$color-primary};
+  --color-accent: #{$color-accent};
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --shadow-header: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+// Tema claro (día)
+[data-theme="light"] {
+  --color-bg: #f5f5f7;
+  --color-bg-card: #ffffff;
+  --color-text: #1d1d1f;
+  --color-text-muted: rgba(29, 29, 31, 0.72);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-primary: #0071e3;
+  --color-accent: #bf5af2;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-header: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+// Aplicar variables del tema a nivel global
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+[data-theme="light"] {
+  .header {
+    background: rgba(255, 255, 255, 0.72);
+    border-color: var(--color-border);
+    backdrop-filter: saturate(180%) blur(20px);
+    &.scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-header);
+    }
+    .header__link { color: var(--color-text); }
+    .header__link:hover { color: var(--color-primary); background: rgba(0, 0, 0, 0.05); }
+    .header__link.active { color: #fff; background: var(--color-accent); }
+    .header__cv {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .header__cv:hover {
+      color: #fff;
+      background: #0077ed;
+    }
+  }
+
+  .mobile-nav {
+    background: var(--color-bg-card);
+    border-color: var(--color-border);
+    .header__link { color: var(--color-text); }
+  }
+
+  .hero__card {
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+  }
+  .hero__title { color: #1d1d1f; }
+  .hero__subtitle { color: #6e6e73; }
+  .hero__pill { background: #e8e8ed; border-color: #d2d2d7; color: #1d1d1f; }
+  .hero__pill--active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+  .hero__label { background: rgba(255, 255, 255, 0.98); color: #1d1d1f; }
+  .hero__select {
+    background: #fff;
+    border-color: var(--color-border);
+    color: #1d1d1f;
+  }
+  .hero__btn-cta { background: var(--color-accent); color: #fff; }
+
+  .section-title { color: var(--color-text); }
+  .section-title span { color: #c746fe; }
+
+  .projects .container-inner,
+  .about .about__inner,
+  .contact .contact__inner {
+    background: var(--color-bg-card);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-card);
+  }
+  .project-card {
+    background: var(--color-bg-card);
+    border-color: var(--color-border);
+    .project-card__title { color: var(--color-text); }
+    .project-card__meta { color: var(--color-text-muted); }
+    .project-card__link { color: var(--color-primary); }
+  }
+  .about__text,
+  .about__skill,
+  .about__exp-period { color: var(--color-text-muted); }
+  .about__exp-role { color: var(--color-text); }
+  .about__exp-company { color: var(--color-primary); }
+  .about__experience { background: rgba(0, 0, 0, 0.04); border-color: var(--color-border); }
+
+  .contact__text,
+  .contact__label { color: var(--color-text-muted); }
+  .contact__input,
+  .contact__textarea {
+    background: #fff;
+    border-color: var(--color-border);
+    color: #1d1d1f;
+  }
+
+  .footer {
+    background: var(--color-bg-card);
+    border-color: var(--color-border);
+    .footer__logo,
+    .footer__heading { color: var(--color-text); }
+    .footer__tagline,
+    .footer__link,
+    .footer__social-link,
+    .footer__copy { color: var(--color-text-muted); }
+    .footer__email { color: var(--color-primary); }
+  }
+}

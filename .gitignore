@@ -1,0 +1,21 @@
+# Dependencias
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Entorno / secretos
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build (opcional: si no quieres subir css compilado, descomenta)
+# css/main.css
