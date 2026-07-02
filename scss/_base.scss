@@ -1,0 +1,142 @@
+// ============================================
+// BASE - Reset y estilos globales
+// ============================================
+
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+
+// Fuente para títulos: Bemio
+@font-face {
+  font-family: "Bemio";
+  src: url("../assets/fonts/Bemio.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Poppins (párrafos y textos: Regular + Light para apoyo)
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Skip link (accesibilidad)
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: $space-3 $space-6;
+  background: $color-primary;
+  color: $color-tertiary;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-md;
+  transition: top $transition-base;
+}
+.skip-link:focus {
+  top: $space-4;
+  outline: 2px solid $color-accent;
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: color.adjust($color-primary, $lightness: 15%);
+  }
+
+  @include focus-visible;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  @include focus-visible;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+}
+
+.container-inner {
+  @include container;
+}
+
+section {
+  padding-top: $space-16;
+  padding-bottom: $space-16;
+
+  @include respond-to("lg") {
+    padding-top: $space-20;
+    padding-bottom: $space-20;
+  }
+}
+
+.section-title {
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  margin-bottom: $space-8;
+  text-align: center;
+
+  @include respond-to("md") {
+    font-size: $font-size-3xl;
+    margin-bottom: $space-10;
+  }
+
+  span {
+    color: $color-heading-accent;
+  }
+}

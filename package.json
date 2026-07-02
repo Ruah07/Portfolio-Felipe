@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-felipe-reyes",
+  "private": true,
+  "scripts": {
+    "build:css": "sass scss/main.scss css/main.css --no-source-map",
+    "watch:css": "sass scss/main.scss css/main.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

@@ -1,0 +1,280 @@
+// ============================================
+// COMPONENTS - Cards, botones, secciones
+// ============================================
+
+@use "variables" as *;
+@use "mixins" as *;
+
+// Proyectos - misma línea visual (flotante + gradiente morado)
+.projects {
+  @include section-bg;
+
+  .container-inner {
+    @include section-card;
+  }
+
+  &__grid {
+    display: grid;
+    gap: $space-6;
+    grid-template-columns: 1fr;
+
+    @include respond-to("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to("lg") {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-8;
+    }
+  }
+}
+
+// Card de proyecto
+.project-card {
+  @include card-project;
+
+  &__image {
+    aspect-ratio: 16 / 10;
+    background: $bg-card-hover;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-slow;
+    }
+
+    .project-card:hover & img {
+      transform: scale(1.05);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba($color-tertiary, 0.6) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity $transition-base;
+    }
+
+    .project-card:hover &::after {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    padding: $space-4;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $space-2;
+    color: $color-text;
+    @include truncate(2);
+  }
+
+  &__meta {
+    display: flex;
+    gap: $space-4;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
+    color: $color-text-subtle;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    margin-top: $space-3;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      transition: transform $transition-fast;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+// Sección About - misma línea visual
+.about {
+  @include section-bg;
+
+  &__inner {
+    @include section-card;
+    display: grid;
+    gap: $space-10;
+
+    @include respond-to("lg") {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: $space-16;
+    }
+  }
+
+  &__content h2 {
+    font-size: $font-size-2xl;
+    margin-bottom: $space-4;
+
+    @include respond-to("md") {
+      font-size: $font-size-3xl;
+    }
+
+    span {
+      color: $color-heading-accent;
+    }
+  }
+
+  &__text {
+    font-weight: $font-weight-light;
+    color: $color-text-muted;
+    margin-bottom: $space-6;
+    line-height: $line-height-relaxed;
+  }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+  }
+
+  &__skill {
+    font-weight: $font-weight-light;
+    padding: $space-2 $space-4;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+
+  &__experience {
+    background: rgba($bg-dark, 0.4);
+    border: 1px solid $border-color;
+    border-radius: $radius-lg;
+    padding: $space-6;
+  }
+
+  &__exp-item {
+    padding-bottom: $space-4;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    &:not(:first-child) {
+      padding-top: $space-4;
+    }
+  }
+
+  &__exp-role {
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    margin-bottom: $space-1;
+  }
+
+  &__exp-company {
+    font-size: $font-size-sm;
+    color: $color-primary;
+    margin-bottom: $space-1;
+  }
+
+  &__exp-period {
+    font-weight: $font-weight-light;
+    font-size: $font-size-xs;
+    color: $color-text-subtle;
+  }
+}
+
+// Sección Contacto - misma línea visual
+.contact {
+  @include section-bg;
+
+  &__inner {
+    @include section-card;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &__text {
+    font-weight: $font-weight-light;
+    color: $color-text-muted;
+    margin-bottom: $space-8;
+    font-size: $font-size-lg;
+  }
+
+  &__form {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    text-align: left;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
+    color: $color-text-muted;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: $space-3 $space-4;
+    font-family: $font-sans;
+    font-size: $font-size-base;
+    color: $color-text;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &::placeholder {
+      color: $color-text-subtle;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+    }
+  }
+
+  &__textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  &__submit {
+    @include button-primary;
+    padding: $space-3 $space-6;
+    font-size: $font-size-base;
+    align-self: flex-start;
+  }
+}
