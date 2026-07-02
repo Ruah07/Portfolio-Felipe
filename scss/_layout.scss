@@ -122,7 +122,7 @@
   &__link {
     font-size: $font-size-sm;
     font-weight: $font-weight-medium;
-    color: $color-text-muted;
+    color: var(--color-text-muted);
     padding: $space-2 $space-3;
     border-radius: $radius-full;
     transition: background $transition-base, color $transition-base;
@@ -134,17 +134,98 @@
     }
 
     &:hover {
-      color: $color-text;
+      color: var(--color-text);
       background: rgba(255, 255, 255, 0.06);
     }
 
     &.active {
-      color: $color-text;
+      color: var(--color-text);
       background: $color-accent;
     }
 
     &--cv {
       margin-left: $space-2;
+    }
+
+    &--tools {
+      font-family: inherit;
+      cursor: pointer;
+      color: var(--color-heading-accent);
+      background: rgba($color-accent, 0.18);
+      border: 1px solid rgba($color-accent, 0.45);
+
+      &:hover {
+        color: #fff;
+        background: $color-accent;
+        border-color: $color-accent;
+      }
+
+      &.active {
+        color: #fff;
+        background: $color-accent;
+        border-color: $color-accent;
+      }
+    }
+
+    &--whatsapp {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      display: inline-flex;
+      align-items: center;
+      gap: $space-2;
+      font-family: inherit;
+      font-weight: $font-weight-semibold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #25d366 0%, #20bd5a 100%);
+      border: 1px solid #20bd5a;
+      box-shadow: 0 2px 14px rgba(37, 211, 102, 0.28);
+      animation: whatsapp-nav-pulse 2.4s ease-in-out infinite;
+      transition: background $transition-base, border-color $transition-base, transform $transition-base, box-shadow $transition-base;
+
+      svg {
+        flex-shrink: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          105deg,
+          transparent 38%,
+          rgba(255, 255, 255, 0.45) 50%,
+          transparent 62%
+        );
+        transform: translateX(-140%) skewX(-18deg);
+        animation: tools-skill-shine 3.6s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      &:hover,
+      &:focus-visible,
+      &.active {
+        animation-play-state: paused;
+        color: #fff;
+        background: linear-gradient(135deg, #20bd5a 0%, #1aab4f 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.42);
+
+        &::before {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header__link--whatsapp {
+      animation: none;
+
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -268,7 +349,7 @@
     display: block;
     width: 100%;
     height: 2px;
-    background: $color-text;
+    background: var(--color-text);
     border-radius: $radius-full;
     transition: transform $transition-base, opacity $transition-base;
   }
@@ -321,6 +402,83 @@
     border-radius: $radius-lg;
     border-bottom: 1px solid $border-color;
   }
+
+  .header__link--tools-mobile {
+    width: 100%;
+    margin-top: $space-2;
+    padding: $space-3 $space-6;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    text-align: center;
+    border: 1px solid rgba($color-accent, 0.45);
+    border-bottom: 1px solid rgba($color-accent, 0.45);
+  }
+
+  .header__whatsapp--mobile {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-3;
+    width: 100%;
+    margin-top: $space-2;
+    padding: $space-3 $space-6;
+    font-family: inherit;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: #fff;
+    background: linear-gradient(135deg, #25d366 0%, #20bd5a 100%);
+    border: 1px solid #20bd5a;
+    border-radius: $radius-lg;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+    animation: whatsapp-nav-pulse 2.4s ease-in-out infinite;
+    cursor: pointer;
+    transition: background $transition-base, border-color $transition-base, transform $transition-base, box-shadow $transition-base;
+    @include focus-visible;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        transparent 38%,
+        rgba(255, 255, 255, 0.45) 50%,
+        transparent 62%
+      );
+      transform: translateX(-140%) skewX(-18deg);
+      animation: tools-skill-shine 3.6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    &:hover,
+    &:focus-visible {
+      animation-play-state: paused;
+      background: linear-gradient(135deg, #20bd5a 0%, #1aab4f 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.42);
+
+      &::before {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header__whatsapp--mobile {
+      animation: none;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
 }
 
 // Hero - Card morada flotante (estilo Thinkly)
@@ -342,7 +500,7 @@
 
   position: relative;
   overflow: hidden;
-  background-color: $color-tertiary;
+  background-color: var(--color-bg-section);
 }
 
 .hero__blob {
@@ -398,7 +556,7 @@
   width: 92%;
   max-width: 1100px;
   margin: 0 auto;
-  background: rgba(243, 237, 255, 0.98);
+  background: var(--hero-card-bg);
   border-radius: 28px;
   box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
@@ -438,7 +596,7 @@
   font-weight: $font-weight-bold;
   margin-bottom: $space-4;
   line-height: 1.25;
-  color: #1f2937;
+  color: var(--hero-title);
 
   @include respond-to("md") {
     font-size: $font-size-3xl;
@@ -456,7 +614,7 @@
 .hero__subtitle {
   font-weight: $font-weight-light;
   font-size: $font-size-base;
-  color: #4b5563;
+  color: var(--hero-subtitle);
   margin-bottom: $space-6;
   line-height: $line-height-relaxed;
   max-width: 520px;
@@ -541,6 +699,16 @@
   @include respond-to("lg") {
     max-width: 380px;
   }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.hero__image-wrap--fallback {
+  min-height: 280px;
+  background: linear-gradient(135deg, rgba($color-primary, 0.2) 0%, rgba($color-accent, 0.35) 100%);
+  border-radius: $radius-lg;
 }
 
 // Orden visual: 1 Ideas (izq), 2 Diseño (der arriba), 3 Desarrollo (der abajo)
@@ -645,13 +813,23 @@
   50% { opacity: 0.5; }
 }
 
+@keyframes whatsapp-nav-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45), 0 2px 14px rgba(37, 211, 102, 0.22);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px rgba(37, 211, 102, 0), 0 4px 22px rgba(37, 211, 102, 0.4);
+  }
+}
+
 // Footer - Estilo tipo CIDET Capacitate (columnas, Hable con nosotros, De tu interés, Sobre)
 .footer {
   max-width: 90%;
   margin: 0 auto;
   border-radius: 16px 16px 0 0;
-  background: $bg-card;
-  border-top: 1px solid $border-color;
+  background: var(--color-bg-card);
+  border-top: 1px solid var(--color-border);
   padding: $space-16 0 $space-8;
 
   &__inner {
@@ -697,7 +875,7 @@
   &__tagline {
     font-weight: $font-weight-light;
     font-size: $font-size-base;
-    color: $color-text-muted;
+    color: var(--color-text-muted);
     line-height: $line-height-relaxed;
   }
 
@@ -711,7 +889,7 @@
     font-family: $font-heading;
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
-    color: $color-text;
+    color: var(--color-text);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: $space-3;
@@ -723,6 +901,24 @@
     font-weight: $font-weight-medium;
 
     &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__whatsapp {
+    display: inline-block;
+    margin-top: $space-2;
+    padding: 0;
+    font-family: inherit;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: #25d366;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #20bd5a;
       text-decoration: underline;
     }
   }
@@ -759,11 +955,29 @@
   &__link {
     font-weight: $font-weight-light;
     font-size: $font-size-base;
-    color: $color-text-muted;
+    color: var(--color-text-muted);
     transition: color $transition-fast;
 
     &:hover {
       color: $color-primary;
+    }
+
+    &--tools {
+      display: inline-block;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: $font-weight-medium;
+      color: var(--color-heading-accent);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+
+      &:hover {
+        color: var(--color-accent);
+        text-decoration: underline;
+      }
     }
   }
 
@@ -782,7 +996,7 @@
   &__social-link {
     font-weight: $font-weight-light;
     font-size: $font-size-base;
-    color: $color-text-muted;
+    color: var(--color-text-muted);
     transition: color $transition-fast;
 
     &:hover {
@@ -803,6 +1017,6 @@
   &__copy {
     font-weight: $font-weight-light;
     font-size: $font-size-sm;
-    color: $color-text-subtle;
+    color: var(--color-text-subtle);
   }
 }

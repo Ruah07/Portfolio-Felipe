@@ -105,8 +105,8 @@
 
 // Card de proyecto
 @mixin card-project {
-  background: $bg-card;
-  border: 1px solid $border-color;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: $radius-lg;
   overflow: hidden;
   transition: border-color $transition-base, box-shadow $transition-base, transform $transition-base;
@@ -170,7 +170,7 @@
 @mixin section-bg {
   position: relative;
   overflow: hidden;
-  background-color: $color-tertiary;
+  background-color: var(--color-bg-section);
 }
 
 // Contenedor flotante (card) para secciones
@@ -182,11 +182,11 @@
   margin-left: auto;
   margin-right: auto;
   padding: $space-10 $space-6;
-  background: rgba($bg-card, 0.6);
+  background: var(--color-bg-section-inner);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba($color-accent, 0.15);
+  border: 1px solid var(--color-border-accent);
   border-radius: $radius-2xl;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-section);
 
   @include respond-to("md") {
     padding: $space-12 $space-10;

@@ -10,23 +10,23 @@
   <meta name="keywords" content="diseñador gráfico, UI/UX, branding, diseño web, landing page, Bogotá, Colombia, freelance, portfolio">
   <meta name="author" content="Felipe Reyes">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://felipecreativo.art/">
+  <link rel="canonical" href="https://portfolio-felipe-two.vercel.app/">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://felipecreativo.art/">
+  <meta property="og:url" content="https://portfolio-felipe-two.vercel.app/">
   <meta property="og:title" content="Felipe Reyes | Diseñador Gráfico · UI/UX y Branding">
   <meta property="og:description" content="Portfolio de Felipe Reyes. Diseño gráfico, UI/UX y branding. Bogotá, Colombia. Disponible para freelance.">
-  <meta property="og:image" content="https://felipecreativo.art/assets/images/og-image.jpg">
+  <meta property="og:image" content="https://portfolio-felipe-two.vercel.app/assets/images/logo.png">
   <meta property="og:locale" content="es_CO">
   <meta property="og:site_name" content="Felipe Reyes Portfolio">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Felipe Reyes | Diseñador Gráfico">
   <meta name="twitter:description" content="Portfolio · UI/UX, branding y diseño web. Bogotá, Colombia.">
-  <meta name="twitter:image" content="https://felipecreativo.art/assets/images/og-image.jpg">
+  <meta name="twitter:image" content="https://portfolio-felipe-two.vercel.app/assets/images/logo.png">
   <link rel="icon" href="assets/images/logo.png" type="image/png" sizes="any">
   <link rel="apple-touch-icon" href="assets/images/logo.png">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/theme-init.js"></script>
   <script type="application/ld+json">
@@ -35,11 +35,12 @@
     "@type": "Person",
     "name": "Felipe Reyes",
     "jobTitle": "Diseñador Gráfico",
-    "url": "https://felipecreativo.art",
+    "url": "https://portfolio-felipe-two.vercel.app",
     "sameAs": [
       "https://www.behance.net/dfreyes98",
       "https://www.linkedin.com/in/felipe-reyes-80364617b",
-      "https://www.instagram.com/feel_live_store"
+      "https://www.instagram.com/feel_live_store",
+      "https://github.com/Ruah07"
     ],
     "knowsAbout": ["Diseño UI/UX", "Branding", "Diseño Web", "Landing Pages"],
     "address": { "@type": "PostalAddress", "addressLocality": "Bogotá", "addressCountry": "CO" }
@@ -50,14 +51,19 @@
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
   <header class="header" id="header" role="banner">
     <div class="header__inner">
-      <a href="#inicio" class="header__logo" aria-current="page">
+      <a href="#inicio" class="header__logo">
         <img src="assets/images/logo.png" alt="Felipe Reyes - Inicio" class="header__logo-img" width="140" height="40">
       </a>
       <nav class="header__nav" aria-label="Navegación principal">
         <a href="#inicio" class="header__link active">Inicio</a>
         <a href="#sobre-mi" class="header__link">Sobre mí</a>
         <a href="#proyectos" class="header__link">Proyectos</a>
+        <a href="#github" class="header__link">GitHub</a>
         <a href="#contacto" class="header__link">Contacto</a>
+        <button type="button" class="header__link header__link--whatsapp" data-whatsapp-open>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          WhatsApp
+        </button>
       </nav>
       <div class="header__actions">
         <button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar entre tema claro y oscuro" aria-pressed="false" title="Tema día/noche">
@@ -76,7 +82,12 @@
     <a href="#inicio" class="header__link">Inicio</a>
     <a href="#sobre-mi" class="header__link">Sobre mí</a>
     <a href="#proyectos" class="header__link">Proyectos</a>
+    <a href="#github" class="header__link">GitHub</a>
     <a href="#contacto" class="header__link">Contacto</a>
+    <button type="button" class="header__whatsapp header__whatsapp--mobile" data-whatsapp-open>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      Escríbeme por WhatsApp
+    </button>
     <a href="assets/docs/cv.pdf" class="header__cv header__cv--mobile" target="_blank" rel="noopener noreferrer">Descargar CV</a>
   </nav>
 
@@ -107,6 +118,7 @@
               <select class="hero__select" id="heroLink" aria-label="Destino">
                 <option value="">Ir a...</option>
                 <option value="proyectos">Ver proyectos</option>
+                <option value="github">GitHub</option>
                 <option value="contacto">Contacto</option>
                 <option value="behance">Behance</option>
               </select>
@@ -114,7 +126,7 @@
             </div>
           </div>
           <div class="hero__image-wrap">
-            <img class="hero__image" src="assets/images/hero.png" alt="Imagen a reemplazar por tu foto o ilustración" width="480" height="560" onerror="this.src='https://via.placeholder.com/480x560/260034/D36FFE?text=Tu+imagen'">
+            <img class="hero__image" src="assets/images/hero.png" alt="Felipe Reyes, diseñador gráfico especializado en UI/UX y branding" width="480" height="560">
             <!-- Orden: 1 Ideas (bulb), 2 Diseño (cloud), 3 Desarrollo (graph) -->
             <div class="hero__icon hero__icon--bulb" aria-hidden="true" title="Ideas">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
@@ -133,82 +145,17 @@
       </div>
     </section>
 
-    <section class="projects" id="proyectos">
-      <div class="container-inner">
-        <h2 class="section-title" data-aos="fade-up">Mis <span>Proyectos</span></h2>
-        <div class="projects__grid">
-        <article class="project-card" data-aos="fade-up" data-aos-delay="0">
-          <a href="https://www.behance.net/gallery/243685177/SolarYA-Proyecto-final-Diseno-UXUI" target="_blank" rel="noopener" class="project-card__image">
-            <img src="assets/images/proyecto-solarya.jpg" alt="SolarYA UX/UI" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/260034/00DEFE?text=SolarYA+UX%2FUI'">
-          </a>
-          <div class="project-card__content">
-            <h3 class="project-card__title">SolarYA | Proyecto final Diseño UX/UI</h3>
-            <div class="project-card__meta"><span>77 vistas</span><span>33 appreciations</span></div>
-            <a href="https://www.behance.net/gallery/243685177/SolarYA-Proyecto-final-Diseno-UXUI" target="_blank" rel="noopener" class="project-card__link">Ver en Behance →</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://www.behance.net/gallery/227950189/Landing-Page-para-cursos-empresariales" target="_blank" rel="noopener" class="project-card__image">
-            <img src="assets/images/proyecto-landing-cursos.jpg" alt="Landing cursos empresariales" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/260034/D36FFE?text=Landing+Cursos'">
-          </a>
-          <div class="project-card__content">
-            <h3 class="project-card__title">Landing Page para cursos empresariales</h3>
-            <div class="project-card__meta"><span>13 vistas</span><span>1 appreciation</span></div>
-            <a href="https://www.behance.net/gallery/227950189/Landing-Page-para-cursos-empresariales" target="_blank" rel="noopener" class="project-card__link">Ver en Behance →</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <a href="https://www.behance.net/gallery/227946491/DISENO-WEB" target="_blank" rel="noopener" class="project-card__image">
-            <img src="assets/images/proyecto-diseno-web.jpg" alt="Diseño Web" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/260034/00DEFE?text=Dise%C3%B1o+Web'">
-          </a>
-          <div class="project-card__content">
-            <h3 class="project-card__title">DISEÑO WEB</h3>
-            <div class="project-card__meta"><span>13 vistas</span><span>1 appreciation</span></div>
-            <a href="https://www.behance.net/gallery/227946491/DISENO-WEB" target="_blank" rel="noopener" class="project-card__link">Ver en Behance →</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="fade-up" data-aos-delay="0">
-          <a href="https://www.behance.net/gallery/227492983/FeBite" target="_blank" rel="noopener" class="project-card__image">
-            <img src="assets/images/proyecto-febite.jpg" alt="FeBite" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/260034/D36FFE?text=FeBite'">
-          </a>
-          <div class="project-card__content">
-            <h3 class="project-card__title">FeBite</h3>
-            <div class="project-card__meta"><span>14 vistas</span><span>1 appreciation</span></div>
-            <a href="https://www.behance.net/gallery/227492983/FeBite" target="_blank" rel="noopener" class="project-card__link">Ver en Behance →</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://www.behance.net/gallery/90985173/FEEL-LIVE-BRANDING" target="_blank" rel="noopener" class="project-card__image">
-            <img src="assets/images/proyecto-feel-live.jpg" alt="FEEL & LIVE Branding" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/260034/00DEFE?text=FEEL+%26+LIVE'">
-          </a>
-          <div class="project-card__content">
-            <h3 class="project-card__title">FEEL & LIVE | BRANDING</h3>
-            <div class="project-card__meta"><span>41 vistas</span><span>1 appreciation</span></div>
-            <a href="https://www.behance.net/gallery/90985173/FEEL-LIVE-BRANDING" target="_blank" rel="noopener" class="project-card__link">Ver en Behance →</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <a href="https://www.behance.net/gallery/89231943/GAME-OF-THRONES-EDITORIAL" target="_blank" rel="noopener" class="project-card__image">
-            <img src="assets/images/proyecto-game-of-thrones.jpg" alt="Game of Thrones Editorial" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/260034/D36FFE?text=Game+of+Thrones'">
-          </a>
-          <div class="project-card__content">
-            <h3 class="project-card__title">GAME OF THRONES | EDITORIAL</h3>
-            <div class="project-card__meta"><span>59 vistas</span><span>3 appreciations</span></div>
-            <a href="https://www.behance.net/gallery/89231943/GAME-OF-THRONES-EDITORIAL" target="_blank" rel="noopener" class="project-card__link">Ver en Behance →</a>
-          </div>
-        </article>
-        </div>
-      </div>
-    </section>
-
     <section class="about" id="sobre-mi">
       <div class="about__inner container-inner">
         <div class="about__content" data-aos="fade-right">
           <h2>Acerca de <span>mí</span></h2>
           <p class="about__text">
-            ¡Hola soy Felipe! Soy Diseñador Gráfico con más de 5 años de experiencia en diversas áreas del diseño. Me especializo en la creación de landing pages efectivas y atractivas, combinando estrategias de conversión con un enfoque en el diseño de interfaz de usuario (UI) para garantizar experiencias digitales memorables.
+            ¡Hola, soy Felipe! Desde 2018 me dedico a generar impacto a través del diseño visual. En mi búsqueda por crear experiencias digitales más completas, evolucioné de Diseñador Gráfico a Diseñador UX/UI y Desarrollador Frontend certificado. Ya no solo diseño landing pages de alta conversión; ahora también escribo la lógica detrás de ellas. Si buscas un profesional versátil capaz de conceptualizar un producto centrado en el usuario y construirlo con tecnologías modernas, conectemos.
           </p>
           <div class="about__skills">
+            <button type="button" class="about__skill about__skill--tools" data-tools-open>
+              Herramientas y stack
+            </button>
             <span class="about__skill">UI/UX</span>
             <span class="about__skill">Branding</span>
             <span class="about__skill">Diseño Web</span>
@@ -218,22 +165,178 @@
           </div>
         </div>
         <div class="about__experience" data-aos="fade-left">
-          <h3 style="margin-bottom: 1rem; font-size: 1.25rem;">Experiencia</h3>
+          <h3 class="about__exp-heading">Experiencia</h3>
           <div class="about__exp-item">
             <p class="about__exp-role">Desarrollador de Contenido E-learning y Diseñador Gráfico</p>
             <p class="about__exp-company">CIDET - Colombia</p>
-            <p class="about__exp-period">Experiencia relevante</p>
+            <p class="about__exp-period">Contenidos digitales y diseño instruccional</p>
           </div>
           <div class="about__exp-item">
             <p class="about__exp-role">Supervisor de campus | Diseñador gráfico</p>
             <p class="about__exp-company">TECH Universidad Tecnológica - Colombia</p>
-            <p class="about__exp-period">Experiencia relevante</p>
+            <p class="about__exp-period">Supervisión académica y material visual</p>
           </div>
           <div class="about__exp-item">
             <p class="about__exp-role">Diseñador gráfico y arte finalista</p>
             <p class="about__exp-company">Momentos - Bogotá, Colombia</p>
-            <p class="about__exp-period">Experiencia relevante</p>
+            <p class="about__exp-period">Piezas gráficas y arte final</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="proyectos">
+      <div class="container-inner">
+        <h2 class="section-title" data-aos="fade-up">Mis <span>Proyectos</span></h2>
+        <div class="projects__grid">
+        <article class="project-card">
+          <a href="https://www.behance.net/gallery/243685177/SolarYA-Proyecto-final-Diseno-UXUI" target="_blank" rel="noopener noreferrer" class="project-card__image" data-aos="fade-up" data-aos-delay="0">
+            <img src="assets/images/proyecto-solarya.png" alt="SolarYA UX/UI" loading="lazy">
+          </a>
+          <div class="project-card__content">
+            <h3 class="project-card__title">SolarYA | Proyecto final Diseño UX/UI</h3>
+            <div class="project-card__meta"><span>77 vistas</span><span>33 appreciations</span></div>
+            <a href="https://www.behance.net/gallery/243685177/SolarYA-Proyecto-final-Diseno-UXUI" target="_blank" rel="noopener noreferrer" class="project-card__link">Ver en Behance →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a href="https://www.behance.net/gallery/227950189/Landing-Page-para-cursos-empresariales" target="_blank" rel="noopener noreferrer" class="project-card__image" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/proyecto-landing-cursos.png" alt="Landing cursos empresariales" loading="lazy">
+          </a>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Landing Page para cursos empresariales</h3>
+            <div class="project-card__meta"><span>13 vistas</span><span>1 appreciation</span></div>
+            <a href="https://www.behance.net/gallery/227950189/Landing-Page-para-cursos-empresariales" target="_blank" rel="noopener noreferrer" class="project-card__link">Ver en Behance →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a href="https://www.behance.net/gallery/227946491/DISENO-WEB" target="_blank" rel="noopener noreferrer" class="project-card__image" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/proyecto-diseno-web.png" alt="Diseño Web" loading="lazy">
+          </a>
+          <div class="project-card__content">
+            <h3 class="project-card__title">DISEÑO WEB</h3>
+            <div class="project-card__meta"><span>13 vistas</span><span>1 appreciation</span></div>
+            <a href="https://www.behance.net/gallery/227946491/DISENO-WEB" target="_blank" rel="noopener noreferrer" class="project-card__link">Ver en Behance →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a href="https://www.behance.net/gallery/227492983/FeBite" target="_blank" rel="noopener noreferrer" class="project-card__image" data-aos="fade-up" data-aos-delay="0">
+            <img src="assets/images/proyecto-febite.png" alt="FeBite" loading="lazy">
+          </a>
+          <div class="project-card__content">
+            <h3 class="project-card__title">FeBite</h3>
+            <div class="project-card__meta"><span>14 vistas</span><span>1 appreciation</span></div>
+            <a href="https://www.behance.net/gallery/227492983/FeBite" target="_blank" rel="noopener noreferrer" class="project-card__link">Ver en Behance →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a href="https://www.behance.net/gallery/90985173/FEEL-LIVE-BRANDING" target="_blank" rel="noopener noreferrer" class="project-card__image" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/proyecto-feel-live.png" alt="FEEL & LIVE Branding" loading="lazy">
+          </a>
+          <div class="project-card__content">
+            <h3 class="project-card__title">FEEL & LIVE | BRANDING</h3>
+            <div class="project-card__meta"><span>41 vistas</span><span>1 appreciation</span></div>
+            <a href="https://www.behance.net/gallery/90985173/FEEL-LIVE-BRANDING" target="_blank" rel="noopener noreferrer" class="project-card__link">Ver en Behance →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a href="https://www.behance.net/gallery/89231943/GAME-OF-THRONES-EDITORIAL" target="_blank" rel="noopener noreferrer" class="project-card__image" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/proyecto-game-of-thrones.png" alt="Game of Thrones Editorial" loading="lazy">
+          </a>
+          <div class="project-card__content">
+            <h3 class="project-card__title">GAME OF THRONES | EDITORIAL</h3>
+            <div class="project-card__meta"><span>59 vistas</span><span>3 appreciations</span></div>
+            <a href="https://www.behance.net/gallery/89231943/GAME-OF-THRONES-EDITORIAL" target="_blank" rel="noopener noreferrer" class="project-card__link">Ver en Behance →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="github" id="github">
+      <div class="github__inner container-inner">
+        <h2 class="section-title" data-aos="fade-up">Mi <span>GitHub</span></h2>
+        <p class="github__intro" data-aos="fade-up" data-aos-delay="100">
+          Proyectos de código, interfaces y experimentos donde diseño y desarrollo van de la mano.
+        </p>
+        <div class="github__grid" id="githubRepos">
+          <article class="github-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="github-card__header">
+              <svg class="github-card__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <h3 class="github-card__title">
+                <a href="https://github.com/Ruah07/Portfolio-Felipe" target="_blank" rel="noopener noreferrer">Portfolio-Felipe</a>
+              </h3>
+            </div>
+            <p class="github-card__desc">Portfolio de diseño + código: interfaces limpias, experiencias suaves y marcas con intención.</p>
+            <div class="github-card__meta">
+              <span class="github-card__lang">HTML</span>
+              <span class="github-card__lang">SCSS</span>
+              <span class="github-card__lang">JavaScript</span>
+            </div>
+            <div class="github-card__links">
+              <a href="https://github.com/Ruah07/Portfolio-Felipe" target="_blank" rel="noopener noreferrer" class="github-card__link">Ver repositorio →</a>
+              <a href="https://portfolio-felipe-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="github-card__link github-card__link--demo">Demo en vivo ↗</a>
+            </div>
+          </article>
+          <article class="github-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="github-card__header">
+              <svg class="github-card__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <h3 class="github-card__title">
+                <a href="https://github.com/Ruah07/SolarYa" target="_blank" rel="noopener noreferrer">SolarYa</a>
+              </h3>
+            </div>
+            <p class="github-card__desc">Simulador interactivo de paneles solares con catálogo, carrito, cotizador y persistencia de datos.</p>
+            <div class="github-card__meta">
+              <span class="github-card__lang">JavaScript</span>
+              <span class="github-card__lang">CSS</span>
+              <span class="github-card__lang">HTML</span>
+            </div>
+            <div class="github-card__links">
+              <a href="https://github.com/Ruah07/SolarYa" target="_blank" rel="noopener noreferrer" class="github-card__link">Ver repositorio →</a>
+              <a href="https://ruah07.github.io/SolarYa/" target="_blank" rel="noopener noreferrer" class="github-card__link github-card__link--demo">Demo en vivo ↗</a>
+            </div>
+          </article>
+          <article class="github-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="github-card__header">
+              <svg class="github-card__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <h3 class="github-card__title">
+                <a href="https://github.com/Ruah07/Plataforma-2.0" target="_blank" rel="noopener noreferrer">Plataforma-2.0</a>
+              </h3>
+            </div>
+            <p class="github-card__desc">Plataforma E-learning de CIDET Capacita con interfaz moderna y experiencia de usuario clara.</p>
+            <div class="github-card__meta">
+              <span class="github-card__lang">HTML</span>
+              <span class="github-card__lang">SCSS</span>
+              <span class="github-card__lang">JavaScript</span>
+            </div>
+            <div class="github-card__links">
+              <a href="https://github.com/Ruah07/Plataforma-2.0" target="_blank" rel="noopener noreferrer" class="github-card__link">Ver repositorio →</a>
+              <a href="https://plataforma-2-0-gold.vercel.app/" target="_blank" rel="noopener noreferrer" class="github-card__link github-card__link--demo">Demo en vivo ↗</a>
+            </div>
+          </article>
+          <article class="github-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="github-card__header">
+              <svg class="github-card__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <h3 class="github-card__title">
+                <a href="https://github.com/Ruah07/FeBite" target="_blank" rel="noopener noreferrer">FeBite</a>
+              </h3>
+            </div>
+            <p class="github-card__desc">Proyecto web de FeBite con identidad de marca, diseño visual y estructura front-end.</p>
+            <div class="github-card__meta">
+              <span class="github-card__lang">HTML</span>
+              <span class="github-card__lang">SCSS</span>
+            </div>
+            <div class="github-card__links">
+              <a href="https://github.com/Ruah07/FeBite" target="_blank" rel="noopener noreferrer" class="github-card__link">Ver repositorio →</a>
+              <a href="https://febite.vercel.app/" target="_blank" rel="noopener noreferrer" class="github-card__link github-card__link--demo">Demo en vivo ↗</a>
+            </div>
+          </article>
+        </div>
+        <div class="github__cta" data-aos="fade-up" data-aos-delay="200">
+          <a href="https://github.com/Ruah07" target="_blank" rel="noopener noreferrer" class="github__profile-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Ver perfil en GitHub
+          </a>
         </div>
       </div>
     </section>
@@ -242,8 +345,15 @@
       <div class="contact__inner">
         <h2 class="section-title" data-aos="fade-up">¿Trabajamos <span>juntos?</span></h2>
         <p class="contact__text" data-aos="fade-up" data-aos-delay="100">
-          Si tienes un proyecto en mente o quieres conocerme mejor, escríbeme.
+          Cuéntame tu idea por WhatsApp o déjame un mensaje aquí. Respondo en menos de 24 horas.
         </p>
+        <div class="contact__channels" data-aos="fade-up" data-aos-delay="150">
+          <button type="button" class="contact__whatsapp" data-whatsapp-open>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Escríbeme por WhatsApp
+          </button>
+          <p class="contact__hint">300 766 3392 · Bogotá, Colombia</p>
+        </div>
         <form class="contact__form" id="contactForm" data-aos="fade-up" data-aos-delay="200">
           <div class="contact__group">
             <label class="contact__label" for="name">Nombre</label>
@@ -258,6 +368,7 @@
             <textarea id="message" name="message" class="contact__textarea" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
           </div>
           <button type="submit" class="contact__submit">Enviar mensaje</button>
+          <p class="contact__status" id="contactStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -270,11 +381,12 @@
           <a href="#inicio" class="footer__logo">
           <img src="assets/images/logo.png" alt="Felipe Reyes - Inicio" class="footer__logo-img" width="140" height="40">
         </a>
-          <p class="footer__tagline">Diseño gráfico, UI/UX y branding para marcar la diferencia en tu proyecto.</p>
+          <p class="footer__tagline">Diseño gráfico | Desarrollo Frontend | Diseño UI/UX | branding para marcar la diferencia en tu proyecto.</p>
         </div>
         <div class="footer__contact">
-          <h4 class="footer__heading">Hable con nosotros</h4>
-          <a href="mailto:hola@felipecreativo.art" class="footer__email">hola@felipecreativo.art</a>
+          <h4 class="footer__heading">Hablemos</h4>
+          <a href="mailto:dfreyes98@gmail.com" class="footer__email">dfreyes98@gmail.com</a>
+          <button type="button" class="footer__whatsapp" data-whatsapp-open>WhatsApp · 300 766 3392</button>
         </div>
       </div>
       <div class="footer__links-row">
@@ -282,7 +394,8 @@
           <h4 class="footer__heading">De tu interés</h4>
           <ul class="footer__list">
             <li><a href="#proyectos" class="footer__link">Proyectos</a></li>
-            <li><a href="https://www.behance.net/dfreyes98" target="_blank" rel="noopener" class="footer__link">Behance</a></li>
+            <li><a href="https://www.behance.net/dfreyes98" target="_blank" rel="noopener noreferrer" class="footer__link">Behance</a></li>
+            <li><a href="#github" class="footer__link">GitHub</a></li>
             <li><a href="#contacto" class="footer__link">Contacto</a></li>
           </ul>
         </div>
@@ -290,24 +403,150 @@
           <h4 class="footer__heading">Sobre</h4>
           <ul class="footer__list">
             <li><a href="#sobre-mi" class="footer__link">Acerca de mí</a></li>
-            <li><a href="https://felipecreativo.art/" target="_blank" rel="noopener" class="footer__link">felipecreativo.art</a></li>
+            <li><button type="button" class="footer__link footer__link--tools" data-tools-open>Herramientas y stack</button></li>
+            <li><a href="https://portfolio-felipe-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer__link">portfolio-felipe-two.vercel.app</a></li>
           </ul>
         </div>
         <div class="footer__col footer__col--social">
           <h4 class="footer__heading">Sígueme</h4>
           <div class="footer__social">
-            <a href="https://www.instagram.com/feel_live_store" target="_blank" rel="noopener" class="footer__social-link" aria-label="Instagram">Instagram</a>
-            <a href="https://www.linkedin.com/in/felipe-reyes-80364617b" target="_blank" rel="noopener" class="footer__social-link" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/feel_live_store" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">Instagram</a>
+            <a href="https://www.linkedin.com/in/felipe-reyes-80364617b" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://github.com/Ruah07" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub">GitHub</a>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">© 2025 Felipe Reyes. Todos los derechos reservados.</p>
+        <p class="footer__copy">© 2026 Felipe Reyes. | RUAH Brands. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <div class="fab-stack" aria-label="Acciones rápidas">
+    <button type="button" class="tools-fab" data-tools-open aria-label="Ver herramientas y stack">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18 8 4.58a2 2 0 0 1 1 1.74v9.16a2 2 0 0 1-1 1.74l-8 4.58a2 2 0 0 1-1.66 0l-8-4.58a2 2 0 0 1-1-1.74V8.5a2 2 0 0 1 1-1.74l8-4.58a2 2 0 0 1 1.66 0z"/><path d="M12 22V12"/><path d="m3.3 7.7 8.7 4.95 8.7-4.95"/><path d="M12 12 3.3 7.7"/><path d="M12 12v0"/></svg>
+      <span class="tools-fab__tooltip" aria-hidden="true">Mi stack</span>
+    </button>
+    <button type="button" class="whatsapp-fab" data-whatsapp-open aria-label="Escríbeme por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      <span class="whatsapp-fab__tooltip" aria-hidden="true">¿Hablamos?</span>
+    </button>
+  </div>
+
+  <div class="whatsapp-modal" id="whatsappModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="whatsappModalTitle">
+    <div class="whatsapp-modal__backdrop" data-whatsapp-close tabindex="-1" aria-hidden="true"></div>
+    <div class="whatsapp-modal__panel" role="document">
+      <header class="whatsapp-modal__header">
+        <div class="whatsapp-modal__brand">
+          <span class="whatsapp-modal__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </span>
+          <div>
+            <h2 class="whatsapp-modal__title" id="whatsappModalTitle">Escríbeme por WhatsApp</h2>
+            <p class="whatsapp-modal__subtitle">300 766 3392 · Respuesta en menos de 24 h</p>
+          </div>
+        </div>
+        <button type="button" class="whatsapp-modal__close" data-whatsapp-close aria-label="Cerrar">×</button>
+      </header>
+      <p class="whatsapp-modal__intro">Elige un mensaje rápido o escribe el tuyo:</p>
+      <div class="whatsapp-modal__presets" id="whatsappPresets" role="group" aria-label="Mensajes sugeridos"></div>
+      <label class="whatsapp-modal__label" for="whatsappMessage">Tu mensaje</label>
+      <textarea id="whatsappMessage" class="whatsapp-modal__textarea" rows="4" placeholder="Escribe aquí..."></textarea>
+      <div class="whatsapp-modal__actions">
+        <button type="button" class="whatsapp-modal__cancel" data-whatsapp-close>Cancelar</button>
+        <a href="#" class="whatsapp-modal__send" id="whatsappSend" target="_blank" rel="noopener noreferrer">
+          Abrir WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools-modal" id="toolsModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="toolsModalTitle">
+    <div class="tools-modal__backdrop" data-tools-close tabindex="-1" aria-hidden="true"></div>
+    <div class="tools-modal__panel" role="document">
+      <header class="tools-modal__header">
+        <div>
+          <h2 class="tools-modal__title" id="toolsModalTitle">Herramientas y <span>tecnologías</span></h2>
+          <p class="tools-modal__subtitle">Stack con el que diseño, prototipo y desarrollo</p>
+        </div>
+        <button type="button" class="tools-modal__close" data-tools-close aria-label="Cerrar">×</button>
+      </header>
+
+      <div class="tools-modal__cards">
+        <section class="tools-card tools-card--software" aria-labelledby="toolsSoftwareTitle">
+          <h3 class="tools-card__title" id="toolsSoftwareTitle">Software</h3>
+          <ul class="tools-card__grid">
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--illustrator">Ai</span>
+              <span class="tools-item__name">Illustrator</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--photoshop">Ps</span>
+              <span class="tools-item__name">Photoshop</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--premiere">Pr</span>
+              <span class="tools-item__name">Premiere Pro</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--figma" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 38 57" fill="none"><path fill="#1ABCFE" d="M19 28.5c0-5.016 4.066-9.083 9.083-9.083S37.167 23.484 37.167 28.5 33.1 37.583 28.083 37.583 19 33.516 19 28.5z"/><path fill="#0ACF83" d="M.833 47.667c0-5.016 4.066-9.083 9.083-9.083h9.084v9.083c0 5.016-4.067 9.083-9.084 9.083S.833 52.683.833 47.667z"/><path fill="#FF7262" d="M19 0c5.017 0 9.083 4.067 9.083 9.083v9.084H19c-5.017 0-9.083-4.067-9.083-9.084C9.917 4.067 14.083 0 19 0z"/><path fill="#F24E1E" d="M.833 9.083C.833 4.067 4.9 0 9.917 0s9.083 4.067 9.083 9.083v9.084H9.917C4.9 18.167.833 14.1.833 9.083z"/><path fill="#A259FF" d="M.833 28.5c0-5.016 4.066-9.083 9.083-9.083h9.084v9.083c0 5.016-4.067 9.083-9.084 9.083S.833 33.516.833 28.5z"/></svg>
+              </span>
+              <span class="tools-item__name">Figma</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--articulate">a</span>
+              <span class="tools-item__name">Articulate 360</span>
+            </li>
+          </ul>
+          <svg class="tools-card__decor tools-card__decor--pen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M42 8l14 14-28 28H14V36L42 8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 16l14 14" stroke="currentColor" stroke-width="2.5"/></svg>
+        </section>
+
+        <section class="tools-card tools-card--tech" aria-labelledby="toolsTechTitle">
+          <h3 class="tools-card__title" id="toolsTechTitle">Tecnologías</h3>
+          <ul class="tools-card__grid">
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--html">5</span>
+              <span class="tools-item__name">HTML</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--css">3</span>
+              <span class="tools-item__name">CSS</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--js">JS</span>
+              <span class="tools-item__name">JavaScript</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--react" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.2" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.1"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.1" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.1" transform="rotate(-60 12 12)"/></svg>
+              </span>
+              <span class="tools-item__name">React</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--sass">S</span>
+              <span class="tools-item__name">Sass</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--vscode" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M15.5 2.5 20 7l-12 12-4.5-4.5L15.5 2.5z" fill="#007ACC"/><path d="m8 14.5 4.5 4.5L3 21l5-6.5z" fill="#1F9CF0"/><path d="M15.5 2.5 20 7 8.5 18.5 4 14l11.5-11.5z" stroke="#fff" stroke-width=".6" opacity=".35"/></svg>
+              </span>
+              <span class="tools-item__name">Visual Studio Code</span>
+            </li>
+            <li class="tools-item">
+              <span class="tools-item__icon tools-item__icon--ai" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.938 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .511 4.938 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.045l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08-4.778 2.758a.795.795 0 0 0-.393.681l-.004 6.737z"/></svg>
+              </span>
+              <span class="tools-item__name">IA</span>
+            </li>
+          </ul>
+          <svg class="tools-card__decor tools-card__decor--code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M22 18 8 32l14 14M42 18l14 14-14 14" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/aos/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

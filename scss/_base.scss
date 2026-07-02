@@ -62,6 +62,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -82,12 +89,12 @@ img {
 }
 
 a {
-  color: $color-primary;
+  color: var(--color-primary);
   text-decoration: none;
   transition: color $transition-fast;
 
   &:hover {
-    color: color.adjust($color-primary, $lightness: 15%);
+    color: var(--color-accent);
   }
 
   @include focus-visible;
@@ -137,6 +144,6 @@ section {
   }
 
   span {
-    color: $color-heading-accent;
+    color: var(--color-heading-accent);
   }
 }

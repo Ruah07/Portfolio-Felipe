@@ -2,13 +2,13 @@ Imágenes del portfolio
 
 Coloca aquí tus imágenes con estos nombres (o actualiza los src en index.html):
 
-  logo.png (o .svg)           → Logo del nav (reemplazable; recomendado altura ~40px, fondo transparente)
-  hero.jpg                    → Imagen principal del hero (recomendado ~480×560 px)
-  proyecto-solarya.jpg        → SolarYA UX/UI
-  proyecto-landing-cursos.jpg → Landing cursos empresariales
-  proyecto-diseno-web.jpg     → Diseño Web
-  proyecto-febite.jpg         → FeBite
-  proyecto-feel-live.jpg      → FEEL & LIVE Branding
-  proyecto-game-of-thrones.jpg → Game of Thrones Editorial
+  logo.png (o .svg)              → Logo del nav (recomendado altura ~40px, fondo transparente)
+  hero.png                       → Imagen principal del hero (recomendado ~960×1120 px)
+  proyecto-solarya.png           → SolarYA UX/UI (recomendado 1200×750 px, 16:10)
+  proyecto-landing-cursos.png    → Landing cursos empresariales
+  proyecto-diseno-web.png        → Diseño Web
+  proyecto-febite.png            → FeBite
+  proyecto-feel-live.png         → FEEL & LIVE Branding
+  proyecto-game-of-thrones.png   → Game of Thrones Editorial
 
-Si no existe el archivo, se mostrará un placeholder por el onerror del <img>.
+Formato: PNG o JPG. Proporción de proyectos: 16:10 horizontal.
